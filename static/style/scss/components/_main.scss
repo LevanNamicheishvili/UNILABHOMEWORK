@@ -1,0 +1,538 @@
+
+* { 
+    text-decoration: none;
+}
+html { 
+    scroll-behavior: smooth;
+}
+.discover {
+   
+    
+    padding: 96px 73px;
+
+}
+    .discover-main {
+        width: 100%;
+        
+        font-family: $basicfont;
+        display: flex;
+        justify-content: space-between;
+        
+
+        .left-side-container {
+            width: 19.5%;
+            height: 164px;
+
+            h1,
+            p {
+                color: $basiccolor;
+                font-size: 16px;
+                margin-bottom: 22px;
+            }
+
+            h2 {
+                font-size: 21px;
+                margin-bottom: 39px;
+            }
+        }
+
+        .wrapper{
+            width: 65%;
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            .card {
+                width: 240px;
+                height: 328px;
+                cursor: pointer;
+                
+                transition: 0.9s ease;
+
+                img {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    transition: 0.5s;
+                }
+
+                p {
+                    margin-top: 8px;
+                    color: $basiccolor ;
+                    font-family: $basicfont;
+                }
+
+                &:hover {
+
+                    img {
+                        transition: 0.8s;
+                        transform: scale(0.8);
+                    }
+
+                    outline-offset: 0;
+                    transform: scale(1.1);
+                    transition: 0.5s ease-in-out;
+                }
+            }
+        }
+}
+@media screen and (max-width:620px) {
+
+    .discover-main {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        .left-side-container {
+            width: 68.5%;
+            height: 164px;
+            text-align: center;
+            margin-bottom: 50px;
+            
+        }
+    }
+    .card {
+        margin: 0 !important;
+    }
+    
+}
+
+.card {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(255, 255, 255);
+    
+    color: rgb(0, 0, 0);
+}
+
+.modal-wrapper {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    min-height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999999;
+    visibility: hidden;
+    pointer-events: none;
+}
+.modal-wrapper span {
+    cursor: pointer;
+    position: absolute;
+    top: 18%;
+    right: 33%;
+    z-index: 1;
+    color: red;
+    font-size: 39px;
+    font-weight: bolder;
+}
+.modal {
+    width: 50vh;
+    height: 400px;
+    cursor: pointer;
+    img {
+        width: 100%;
+        margin-bottom: 20px;
+        
+    }
+    p {
+        margin-top: 8px;
+        color: $basiccolor ;
+        font-family: $basicfont;
+    }
+    background-color: #fff;
+    transform: translateX(-200%);
+    transition-duration: .5s;
+}
+.modal-wrapper.open {
+    visibility: visible;
+    pointer-events: all;
+
+}
+.modal-wrapper.open .modal {
+    transform: translateX(0);
+}
+
+.discover-video-container { 
+    width: 100%;
+    height: 64vh;
+    background-image: url(../../../static/images/discover_section_images/xavier-coiffic-1068988-unsplash.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 100px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    background-attachment: fixed;
+
+ 
+    .section-discover-text-content { 
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: sans-serif;
+        color: white;
+        
+        p { 
+            margin: 20px;
+            font-size: 1.5em;
+        }
+    }
+
+}
+.tour-result { 
+    display: flex;
+    justify-content: space-evenly;
+    
+    margin-bottom: 65px;
+    
+    
+}
+
+.tour-result-card {
+    text-align: center; 
+    width: 13%;
+    height:150px;
+
+}
+
+@media screen and (max-width:680px) { 
+    .tour-result {
+    
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+}
+
+.section-offer-header,.section-rate-header { 
+    text-align: center;
+    font-family: sans-serif;
+    h2{ 
+        color: gray;
+    }
+    p  { 
+        font-size: 30px;
+        margin-bottom: 65px;
+
+    }
+}
+.offer-card { 
+    width: 266px;
+    height: 400px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: 1px solid rgb(209, 207, 207);
+    .mark { 
+        position: relative;
+        top: 14px;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 98px;
+        height: 25px;
+        background-color: #fed701;
+    }
+
+}
+.offer-card-container { 
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card1-img { 
+    max-width: 100%;
+    height: 246px;
+    background-image:url(../../../static/images/offer_section_images/tom-grimbert-661519-unsplash.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+   
+}
+.card2-img { 
+    max-width: 100%;
+    height: 246px;
+    background-image:url(../../../static/images/offer_section_images/alex-block-429051-unsplash.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}.card3-img { 
+    max-width: 100%;
+    height: 246px;
+    background-image:url(../../../static/images/offer_section_images/anthony-delanoix-460516-unsplash.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+} 
+
+.card-title { 
+    border-top: 5px solid rgb(117, 116, 116);
+    color: rgb(109, 112, 116);
+    transition: 0.9s;
+    
+    padding-top:20px;
+    text-align: center;
+    h2 { 
+        margin:20px;
+        color: rgb(45, 45, 163);
+    }
+    &:hover { 
+        background-color: white;
+        height: 200px;
+        transform: translateY(-50px);
+        transition: 0.5s ease;
+        
+       
+    }
+} 
+
+.email { 
+    width: 100%;
+    height: 380px;
+    padding-top: 50px;
+    background-image: url(../../../static/images/offer_section_images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 0 50px 0;
+
+    
+    .section-email-title { 
+        font-family: $basicfont;
+        text-align: center;
+        color: white;
+       h3 { 
+       font-size: 50px;
+       }
+       p { 
+        font-size: 24px;
+        margin-top: 50px;
+       }
+    }
+    .textarea{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        
+        input { 
+            
+            width: 394px;
+            height: 50px;
+            background-color: inherit;
+            border: 2px solid #FFFFFF;
+            border-radius: 50px;
+            padding-left: 20px;
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+        button { 
+            background-color: #FFFFFF;
+            border: navajowhite;
+            width: 154px;
+            height: 50px;
+            margin-left: 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            color: #08aeea;
+            font-size: 18px;
+            transition: 0.8s ease-in-out;
+
+            &:hover { 
+                background-color: aquamarine;
+                
+            }
+        }
+    }
+}
+.profiles { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.traveler-profile-card { 
+    width: 368px;
+    height: 409px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover { 
+        transform:scale(1.1);
+        transition: 0.3s ease-in-out;
+    }
+
+    .traveler-name{
+    font-size: 20px;
+    color: rgb(57, 57, 172);
+    } 
+    .travelersopinion-card-title { 
+        text-align: center;
+        font-size: 20px;
+    }
+    .profilepicture { 
+        
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        overflow: hidden;
+        img { 
+            max-width: 100%;
+        }
+    }
+    span { 
+        font-size: 50px;
+        font-weight: bolder;
+    }
+}
+
+.trips-book { 
+    width: 100%;
+    height: 60vh;
+    background-image: url(../../../static/images/travelers_view/Brightness-Contrast-1.png);
+    margin-bottom: 60px;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    .trips-book-position { 
+        h3 { 
+            font-size: 36px;
+            color: white;
+
+        }
+        button { 
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            background-color: #20c8ea;
+            width: 170px;
+            height: 50px;
+            cursor: pointer;
+            margin-top: 50px;
+            font-size: 16px;
+        }
+        text-align: center;
+    }
+}
+
+.section-destination-cards-container { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: $basicfont;
+    color: white;
+    font-weight: 400;
+    h3 { 
+        font-size: 30px;
+    }
+    span { 
+        font-size: 14px;
+    }
+   
+}
+
+.destination-arrow-butt { 
+    .fa-solid { 
+       
+        font-size: 50px;
+    }
+}
+
+.section-destination-card1,.section-destination-card4{ 
+    width: 272px;
+    height: 425px;
+    background-image: url(../../../static/images/destination_section_images/mo-baghdadi-1.png);
+    background-size: cover;
+    background-position: center;
+    background-color: darkgray;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    transition: 1.5s;
+    box-shadow: 20px 20px 50px 15px grey;
+    &:hover { 
+        transform: scale(1.1);
+    }
+    
+   img {  
+    max-width: 100%;
+    min-height: 100%;
+   
+    
+} 
+}
+.section-destination-card2{ 
+    width: 272px;
+    height: 425px;
+    background-image: url(../../../static/images//destination_section_images/tom-vining-668021-unsplash.png);
+    background-size: cover;
+    background-position: center;
+    background-color: darkgray;
+    cursor: pointer;
+    transition: 1.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    box-shadow: 20px 20px 50px 15px grey;
+    &:hover { 
+        transform: scale(1.1);
+    }
+   img {  
+    max-width: 100%;
+    min-height: 100%;
+} 
+}
+.section-destination-card3{ 
+    width: 272px;
+    height: 425px;
+    background-image: url(../../../static/images/destination_section_images/yeo-khee-618704-unsplash.png);
+    background-size: cover;
+    background-position: center;
+    background-color: darkgray;
+    cursor: pointer;
+    transition: 1.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    box-shadow: 20px 20px 50px 15px grey;
+    &:hover { 
+        transform: scale(1.1);
+    }
+   img {  
+    max-width: 100%;
+    min-height: 100%;
+} 
+}
+
+
+.map { 
+    iframe { 
+        width: 100%;
+    }
+}
+
+
+
+.hide { 
+    display: none;
+}
+
