@@ -45,67 +45,56 @@ const data = [
 
 
 
-const wrapper = document.querySelector('.wrapper')
+const wrapper = document.querySelector('.wrapper');
 const modalWrapper = document.querySelector('.modal-wrapper');
 const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.modal-wrapper span')
+const closeModal = document.querySelector('.modal-wrapper span');
 
+// Add event listener to close modal button
+closeModal.addEventListener('click', () => {
+    modalWrapper.classList.remove('open');
+});
 
+// Call renderData function to render cards
+renderData(data, wrapper);
 
-closeModal.onclick = () => {
-    
-    modalWrapper.classList.remove('open')
-}
+// Render data into HTML cards
+function renderData(arr, wrapper) {
+    arr.forEach(element => {
+        const card = document.createElement('div');
+        card.classList.add('card');
 
-renderData(data, wrapper)
-
-
-
-
-function renderData (arr, wrapper) {
-    arr.forEach ((element) => {
-        const card = document.createElement('div')
-        card.classList.add('card')
         const discoverCard = `
+            <div>
+                <img src="${element.image}" alt="plane">
+                <h3>${element.title}</h3>
+                <p>${element.paragraph}</p>
+            </div>
+        `;
 
-<div >
-<img src="${element.image}" alt="plane">
-    <h3>${element.title}</h3>
-    <p>${element.paragraph}</p>
-    </div>
-`;
         card.innerHTML += discoverCard;
-        wrapper.append(card)
-      
-        modalHendler(card, element)
-    })
+        wrapper.append(card);
 
+        // Add event listener to each card to show the modal
+        card.addEventListener('click', () => {
+            modalImg.setAttribute('src', element.image);
+            modalTitle.textContent = element.title;
+            modalParagraph.textContent = element.paragraph;
+            modalWrapper.classList.add('open');
+        });
+    });
 }
 
+// Handle modal
+const modalImg = document.createElement('img');
+modalImg.classList.add('popupImg');
 
-function modalHendler (obj, data) {
-    const modalImg = document.createElement('img')
-    modalImg.classList.add('popupImg');
-    const modalTitle = document.createElement('h3')
-    modalTitle.classList.add('popuptitle');
-    const modalParagraph = document.createElement('p')
-    modalParagraph.classList.add('popupParagraph')
-    obj.addEventListener('click', (e) => {
-        
-        modal.innerHTML = ''
-     
-        modalImg.setAttribute('src', data.image)
-        modalTitle.textContent = data.title
-        modalParagraph.textContent = data.paragraph
-        modalWrapper.classList.add('open')
-        modal.append(modalImg, modalTitle, modalParagraph)
-        
+const modalTitle = document.createElement('h3');
+modalTitle.classList.add('popuptitle');
 
-        
-        
-        
-    })
-}
+const modalParagraph = document.createElement('p');
+modalParagraph.classList.add('popupParagraph');
 
+modal.append(modalImg, modalTitle, modalParagraph);
 
 
